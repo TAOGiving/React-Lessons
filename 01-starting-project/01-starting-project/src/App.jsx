@@ -13,6 +13,7 @@ function App() {
     // SelectedButton => 'Component','JSX','Props','State'
     // console.log(selectedButton);
     tabContent = selectedButton;
+    console.log(tabContent);
   }
   console.log("App component executed");
   return (
