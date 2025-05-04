@@ -7,7 +7,7 @@ import TabButton from "./components/TabButton.jsx";
 function App() {
   function handleSelect(selectedButton) {
     // SelectedButton => 'Component','JSX','Props','State'
-    console.log("Clicked! - Selected");
+    console.log(selectedButton);
   }
   return (
     <div>
