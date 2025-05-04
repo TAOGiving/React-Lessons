@@ -5,10 +5,16 @@ import CoreConcept from "./components/CoreConcept.jsx";
 import TabButton from "./components/TabButton.jsx";
 
 function App() {
+  //React will only execute component once, when it is first rendered.
+  // React will not re-execute the component when the state changes.
+  let tabContent = "Please select a button";
+
   function handleSelect(selectedButton) {
     // SelectedButton => 'Component','JSX','Props','State'
-    console.log(selectedButton);
+    // console.log(selectedButton);
+    tabContent = selectedButton;
   }
+  console.log("App component executed");
   return (
     <div>
       <Header />
@@ -38,7 +44,7 @@ function App() {
             <TabButton onSelect={() => handleSelect("props")}>Props</TabButton>
             <TabButton onSelect={() => handleSelect("state")}>State</TabButton>
           </menu>
-          Dynamic Content
+          {tabContent}
         </section>
       </main>
     </div>
