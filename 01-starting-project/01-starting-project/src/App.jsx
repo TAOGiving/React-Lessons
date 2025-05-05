@@ -10,7 +10,6 @@ function App() {
   const [selectedTopic, setSelectedTopic] = useState(); //Always returns an array with two elements, the first is the state variable and the second is a function to update the state variable.
   //React will only execute component once, when it is first rendered.
   // React will not re-execute the component when the state changes.
-  let tabContent = "Please select a button";
 
   function handleSelect(selectedButton) {
     // SelectedButton => 'Component','JSX','Props','State'
@@ -21,6 +20,20 @@ function App() {
     // console.log(selectedTopic);
   }
   console.log("App component executed");
+
+  let tabcontent = <p>Please select a topic.</p>;
+
+  if (selectedTopic) {
+    tabcontent = (
+      <div id="tab-content">
+        <h3>{EXAMPLES[selectedTopic].title}</h3>
+        <p>{EXAMPLES[selectedTopic].description}</p>
+        <pre>
+          <code>{EXAMPLES[selectedTopic].code}</code>
+        </pre>
+      </div>
+    );
+  }
   return (
     <div>
       <Header />
@@ -50,7 +63,7 @@ function App() {
             <TabButton onSelect={() => handleSelect("props")}>Props</TabButton>
             <TabButton onSelect={() => handleSelect("state")}>State</TabButton>
           </menu>
-          {!selectedTopic ? (
+          {/* {!selectedTopic ? (
             <p>Please select a topic.</p>
           ) : (
             <div id="tab-content">
@@ -60,7 +73,20 @@ function App() {
                 <code>{EXAMPLES[selectedTopic].code}</code>
               </pre>
             </div>
-          )}
+          )} */}
+          {/* Same as above but shorter */}
+
+          {/* {!selectedTopic && <p>Please select a topic.</p>} */}
+          {/* If selectedTopic is not null, then it will show the content i.e 'Please select a topic'*/}
+          {/* {selectedTopic && (
+            <div id="tab-content">
+              <h3>{EXAMPLES[selectedTopic].title}</h3>
+              <p>{EXAMPLES[selectedTopic].description}</p>
+              <pre>
+                <code>{EXAMPLES[selectedTopic].code}</code>
+              </pre>
+            </div>
+          )} */}
         </section>
       </main>
     </div>
