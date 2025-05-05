@@ -1,10 +1,12 @@
 // import ComponentsImg from "./assets/components.png";
+import { useState } from "react";
 import { CORE_CONCEPTS } from "./data.js";
 import Header from "./components/Header/Header.jsx";
 import CoreConcept from "./components/CoreConcept.jsx";
 import TabButton from "./components/TabButton.jsx";
 
 function App() {
+  const [selectedTopic, setSelectedTopic] = useState("Please select a button"); //Always returns an array with two elements, the first is the state variable and the second is a function to update the state variable.
   //React will only execute component once, when it is first rendered.
   // React will not re-execute the component when the state changes.
   let tabContent = "Please select a button";
@@ -12,8 +14,10 @@ function App() {
   function handleSelect(selectedButton) {
     // SelectedButton => 'Component','JSX','Props','State'
     // console.log(selectedButton);
-    tabContent = selectedButton;
-    console.log(tabContent);
+    // tabContent = selectedButton;
+    setSelectedTopic(selectedButton);
+    // console.log(tabContent);
+    // console.log(selectedTopic);
   }
   console.log("App component executed");
   return (
@@ -45,7 +49,7 @@ function App() {
             <TabButton onSelect={() => handleSelect("props")}>Props</TabButton>
             <TabButton onSelect={() => handleSelect("state")}>State</TabButton>
           </menu>
-          {tabContent}
+          {selectedTopic}
         </section>
       </main>
     </div>
