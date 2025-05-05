@@ -4,9 +4,10 @@ import { CORE_CONCEPTS } from "./data.js";
 import Header from "./components/Header/Header.jsx";
 import CoreConcept from "./components/CoreConcept.jsx";
 import TabButton from "./components/TabButton.jsx";
+import { EXAMPLES } from "./data.js";
 
 function App() {
-  const [selectedTopic, setSelectedTopic] = useState("Please select a button"); //Always returns an array with two elements, the first is the state variable and the second is a function to update the state variable.
+  const [selectedTopic, setSelectedTopic] = useState("components"); //Always returns an array with two elements, the first is the state variable and the second is a function to update the state variable.
   //React will only execute component once, when it is first rendered.
   // React will not re-execute the component when the state changes.
   let tabContent = "Please select a button";
@@ -49,7 +50,13 @@ function App() {
             <TabButton onSelect={() => handleSelect("props")}>Props</TabButton>
             <TabButton onSelect={() => handleSelect("state")}>State</TabButton>
           </menu>
-          {selectedTopic}
+          <div id="tab-content">
+            <h3>{EXAMPLES[selectedTopic].title}</h3>
+            <p>{EXAMPLES[selectedTopic].description}</p>
+            <pre>
+              <code>{EXAMPLES[selectedTopic].code}</code>
+            </pre>
+          </div>
         </section>
       </main>
     </div>
