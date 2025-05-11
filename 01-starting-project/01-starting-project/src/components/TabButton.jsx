@@ -7,11 +7,13 @@
 // }
 
 //Same as above but using destructuting, also children is whatever is inbetween your component tags.
-export default function TabButton({ children, onSelect }) {
+export default function TabButton({ children, onSelect, isSelected }) {
   console.log("tabbutton component executing");
   return (
     <li>
-      <button onClick={onSelect}>{children}</button>
+      <button className={isSelected ? "active" : undefined} onClick={onSelect}>
+        {children}
+      </button>
     </li>
   );
 }
