@@ -35,7 +35,8 @@ function App() {
     );
   }
   return (
-    <Fragment>
+    // <Fragment> same as <> below
+    <>
       <Header />
 
       <main>
@@ -111,7 +112,8 @@ function App() {
           )}
         </section>
       </main>
-    </Fragment>
+    </>
+    // </Fragment> same as </> above
   );
 }
 
