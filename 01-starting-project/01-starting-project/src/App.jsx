@@ -1,11 +1,6 @@
-// import ComponentsImg from "./assets/components.png";
-// import { useState, Fragment } from "react";
-// import { CORE_CONCEPTS } from "./data.js";
 import Header from "./components/Header/Header.jsx";
-// import CoreConcept from "./components/CoreConcept.jsx";
-// import TabButton from "./components/TabButton.jsx";
-// import CoreConcept from "./components/CoreConcept.jsx";
-import { EXAMPLES } from "./components/Examples.jsx";
+import CoreConcepts from "./components/CoreConcepts.jsx";
+import Examples from "./components/Examples.jsx";
 
 function App() {
   return (
@@ -15,7 +10,7 @@ function App() {
 
       <main>
         <CoreConcepts />
-        <EXAMPLES />
+        <Examples />
       </main>
     </>
     // </Fragment> same as </> above
