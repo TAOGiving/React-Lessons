@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { EXAMPLES } from "../data";
+import TabButton from "./TabButton.jsx";
+import Section from "./Section.jsx";
 
 export default function Examples() {
   const [selectedTopic, setSelectedTopic] = useState(); //Always returns an array with two elements, the first is the state variable and the second is a function to update the state variable.
@@ -30,8 +32,7 @@ export default function Examples() {
     );
   }
   return (
-    <section id="examples">
-      <h2>Examples</h2>
+    <Section title="Examples" id="examples">
       <menu>
         <TabButton
           isSelected={selectedTopic === "components"}
@@ -82,6 +83,6 @@ export default function Examples() {
           </pre>
         </div>
       )}
-    </section>
+    </Section>
   );
 }
